@@ -1,2 +1,2 @@
-# Vanilla-JS-Projects
-Practice JavaScript by building small projects
+# Web Projects with Vanilla JavaScript
+Main repository of all the mini projects.
