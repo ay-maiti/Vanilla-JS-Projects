@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Seat Booking App</title>
+  </head>
+  <body>
+    <div class="movie-selector">
+      <label>Pick a movie:</label>
+      <select id="movie-name">
+        <option value="400">Dunki (₹400)</option>
+        <option value="350">Sam Bahadur (₹350)</option>
+        <option value="350">Animal (₹350)</option>
+        <option value="450">Salaar (₹450)</option>
+      </select>
+    </div>
+
+    <ul class="legend">
+      <li>
+        <div class="seat-available"></div>
+        <small>Available</small>
+      </li>
+      <li>
+        <div class="seat-selected"></div>
+        <small>Selected</small>
+      </li>
+      <li>
+        <div class="seat-occupied"></div>
+        <small>Occupied</small>
+      </li>
+    </ul>
+
+    <div class="movie-hall">
+      <div class="screen"></div>
+      <div class="row">
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+      </div>
+      <div class="row">
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+      </div>
+      <div class="row">
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+      </div>
+      <div class="row">
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+      </div>
+      <div class="row">
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+      </div>
+      <div class="row">
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+        <div class="seat-available"></div>
+      </div>
+    </div>
+
+    <p class="message">
+      You have selected <span id="seat-count">0</span> seats for a price of
+      ₹<span id="total-price">0</span>
+    </p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
