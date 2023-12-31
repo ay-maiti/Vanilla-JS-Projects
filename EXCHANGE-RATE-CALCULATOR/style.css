@@ -1,3 +1,12 @@
 .logo{
     width:40%;
 }
+
+.swap-rate-container{
+    display: flex;
+}
+
+#rate{
+    font-style: normal;
+    margin: 0px 10px;
+}
