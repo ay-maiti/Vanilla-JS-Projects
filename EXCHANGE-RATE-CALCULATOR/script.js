@@ -14,7 +14,7 @@ getConversionRate()
     })
 
 function updateConversionRate(){
-    rate_div.innerHTML = `1 ${currency1.value} = ${conversion_rate} ${currency2.value}`
+    rate_div.innerHTML = `1 ${currency1.value} = ${conversion_rate.toFixed(3)} ${currency2.value}`
 }
     
 async function getConversionRate(){
@@ -34,11 +34,13 @@ function swapCurrency(){
 }
 
 function updateAmount1(){
-    amount1.value = amount2.value / conversion_rate;
+    const amount = amount2.value / conversion_rate
+    amount1.value = amount.toFixed(3);
 }
 
 function updateAmount2(){
-    amount2.value = amount1.value * conversion_rate;
+    const amount = amount1.value * conversion_rate
+    amount2.value = amount.toFixed(3);
 }
 
 swap_btn.addEventListener('click', swapCurrency);
