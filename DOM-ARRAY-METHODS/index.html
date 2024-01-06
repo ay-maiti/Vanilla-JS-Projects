@@ -10,17 +10,20 @@
     <h1>DOM Array Methods</h1>
     <div class="container">
       <div class="buttons-container">
-        <button class="btn">Add User</button>
-        <button class="btn">Double Money</button>
-        <button class="btn">Show Only Millionaires</button>
-        <button class="btn">Sort by Richest</button>
-        <button class="btn">Calculate Entire Wealth</button>
+        <button class="btn" id="add-user">Add User</button>
+        <button class="btn" id="double-money">Double Money</button>
+        <button class="btn" id="show-millionaires">
+          Show Only Millionaires
+        </button>
+        <button class="btn" id="sort">Sort by Richest</button>
+        <button class="btn" id="sum-wealth">Calculate Entire Wealth</button>
       </div>
-      <div class="table">
-        <div class="row">
-          <h1>Person</h1>
-          <h1>Wealth</h1>
+      <div id="table">
+        <div class="row table-heading" id="table-heading">
+          <div><strong>Person</strong></div>
+          <div><strong>Wealth</strong></div>
         </div>
+        <div id="row-container"></div>
       </div>
     </div>
     <script src="script.js"></script>
