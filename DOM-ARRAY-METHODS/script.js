@@ -1,4 +1,5 @@
 let data = []
+const table = document.getElementById('table')
 const rowContainer = document.getElementById('row-container')
 const table_heading = document.getElementById('table-heading')
 const addUserBtn = document.getElementById("add-user")
@@ -16,7 +17,6 @@ function fetchUsers(){
      .then(res=>addUser(res))
     fetchUser()
      .then(data=>addUser(data))
-    //.then(()=>updateDOM())
 }
 
 function fetchUser(){
@@ -36,7 +36,27 @@ function addUser(user_data){
     updateDOMLastElement()
 }
 
+function updateTotalDOM(total){
+    const sum_element = document.createElement('div')
+    sum_element.classList.add('sum')
+   // sum_element.classList.add('table-heading')
+
+    const sum_txt_element = document.createElement('div')
+    const sum_txt = document.createTextNode('Total Wealth: ')
+    sum_txt_element.appendChild(sum_txt)
+    
+    const sum_num_element = document.createElement('div')
+    const sum_num = document.createTextNode('₹ '+total)
+    sum_num_element.appendChild(sum_num)
+
+    sum_element.appendChild(sum_txt_element)
+    sum_element.appendChild(sum_num_element)
+
+    table.appendChild(sum_element)
+}
+
 function updateDOMLastElement(){
+    table.lastChild.innerHTML = ''
     const user = data[data.length-1]
            
     const row_element = document.createElement('div');
@@ -46,7 +66,7 @@ function updateDOMLastElement(){
     name_element.appendChild(name_node)
 
     const money_element = document.createElement('div');
-    const money_node = document.createTextNode(user.money)
+    const money_node = document.createTextNode('₹ '+user.money)
     money_element.appendChild(money_node)
 
     row_element.appendChild(name_element)
@@ -57,6 +77,7 @@ function updateDOMLastElement(){
 
 function updateDOMAllElements(){
     rowContainer.innerHTML = ''
+    table.lastChild.innerHTML = ''
     data.forEach(user=>{
         const row_element = document.createElement('div');
         row_element.classList.add('row')
@@ -65,7 +86,7 @@ function updateDOMAllElements(){
         name_element.appendChild(name_node)
 
         const money_element = document.createElement('div');
-        const money_node = document.createTextNode(user.money)
+        const money_node = document.createTextNode('₹ '+user.money)
         money_element.appendChild(money_node)
 
         row_element.appendChild(name_element)
@@ -93,4 +114,10 @@ showMillionairesBtn.addEventListener('click', ()=>{
 sortUserBtn.addEventListener('click', ()=>{
     data = data.sort((a,b) => b.money - a.money)
     updateDOMAllElements()
+})
+
+sumWealthBtn.addEventListener('click', ()=>{
+    const sum = data.reduce((acc, curr)=>acc+curr.money, 0)
+    console.log(sum)
+    updateTotalDOM(sum)
 })
